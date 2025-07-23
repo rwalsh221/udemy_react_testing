@@ -1,4 +1,4 @@
-import { getAllByText, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import Sandbox from './Sandbox';
 
 describe('02-tdd-example', () => {
