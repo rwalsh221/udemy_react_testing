@@ -19,6 +19,8 @@ describe("Form Component", () => {
     render(<Form onSubmit={mockOnSubmit} />);
   });
 
+  screen.debug();
+
   test("renders form with empty fields initially", () => {
     const { titleInputEl, descriptionInputEl, categorySelectEl } =
       getFormElements();
