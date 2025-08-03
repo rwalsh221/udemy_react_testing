@@ -1,0 +1,14 @@
+{
+  "posts": [
+    {
+      "id": "2",
+      "title": "node ts course",
+      "likes": 8
+    },
+    {
+      "id": "ac37",
+      "title": "new post title",
+      "likes": 0
+    }
+  ]
+}
