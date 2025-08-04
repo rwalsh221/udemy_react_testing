@@ -8,7 +8,12 @@
     {
       "id": "ac37",
       "title": "new post title",
-      "likes": 0
+      "likes": 2
+    },
+    {
+      "id": "4fa2",
+      "title": "hello again",
+      "likes": 10
     }
   ]
 }
