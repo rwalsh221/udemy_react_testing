@@ -18,4 +18,9 @@ describe('List Component', () => {
     );
     expect(screen.getAllByRole('article')).toHaveLength(2);
   });
+
+  test('renders empty list when no posts provided', () => {
+    render(<List posts={[]} onDelete={mockOnDelete} onLike={mockOnLike} />);
+    expect(screen.queryAllByRole('article')).toHaveLength(0);
+  });
 });
