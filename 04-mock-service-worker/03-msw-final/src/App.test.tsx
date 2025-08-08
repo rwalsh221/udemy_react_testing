@@ -1,5 +1,7 @@
 import { render, screen, within } from '@testing-library/react';
 import App from './App';
+// import App from '../../01-msw-starter/src/App';
+
 import userEvent from '@testing-library/user-event';
 import { getFormElements } from './__tests__/Form.test';
 import { posts } from './mocks/handlers';

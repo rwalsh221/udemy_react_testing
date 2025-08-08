@@ -35,10 +35,9 @@ const Form = ({ onSubmit }: FormProps) => {
         type="submit"
         className="px-4 py-2 bg-teal-500 text-white rounded"
       >
-        Add post
+        Add Post
       </button>
     </form>
   );
 };
-
 export default Form;

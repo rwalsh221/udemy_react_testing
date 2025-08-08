@@ -16,9 +16,9 @@ const App = () => {
     fetchPosts();
   }, []);
   return (
-    <div className='max-w-3xl mx-auto mt-10 p-4'>
-      <h1 className='text-2xl font-bold mb-4'>Posts Manager</h1>
-      {error && <div className='text-red-500 mb-4'>{error}</div>}
+    <div className="max-w-3xl mx-auto mt-10 p-4">
+      <h1 className="text-2xl font-bold mb-4">Posts Manager</h1>
+      {error && <div className="text-red-500 mb-4">{error}</div>}
       <Form onSubmit={handleCreatePost} />
       <List posts={posts} onLike={handleLike} onDelete={handleDelete} />
     </div>
