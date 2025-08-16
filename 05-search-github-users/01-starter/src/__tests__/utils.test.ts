@@ -76,3 +76,58 @@ describe('calculate most forked repos', () => {
     expect(result[1].count).toBeGreaterThanOrEqual(result[2].count);
   });
 });
+
+describe('calculate most starred repos', () => {
+  test('should return empty array for empty input', () => {
+    const result = calculateMostStarredRepos([]);
+    expect(result).toEqual([]);
+  });
+
+  test('should return top 5 most starred repositories', () => {
+    const result = calculateMostStarredRepos(mockRepositories);
+    expect(result).toEqual([
+      { repo: 'repo3', stars: 3000 },
+      { repo: 'repo2', stars: 2000 },
+      { repo: 'repo1', stars: 1000 },
+    ]);
+  });
+
+  test('sort repositories by star count in descending order', () => {
+    const result = calculateMostStarredRepos(mockRepositories);
+    expect(result[0].stars).toBeGreaterThanOrEqual(result[1].stars);
+    expect(result[1].stars).toBeGreaterThanOrEqual(result[2].stars);
+  });
+});
+
+describe('calculate popular languages', () => {
+  test('should return empty array for empty input', () => {
+    const result = calculatePopularLanguages([]);
+    expect(result).toEqual([]);
+  });
+
+  test('should return empty array when no languages are present', () => {
+    const repoWithNoLanguages: Repository[] = [
+      { ...mockRepositories[0], languages: { edges: [] } },
+    ];
+
+    const result = calculatePopularLanguages(repoWithNoLanguages);
+    expect(result).toEqual([]);
+  });
+
+  test('should return top 5 most used languages', () => {
+    const result = calculatePopularLanguages(mockRepositories);
+    expect(result).toEqual([
+      { language: 'javascript', count: 2 },
+      { language: 'typescript', count: 2 },
+      { language: 'python', count: 2 },
+    ]);
+  });
+
+  test('should count language occurances correctly', () => {
+    const result = calculatePopularLanguages(mockRepositories);
+
+    const jsCount = result.find((lang) => lang.language === 'javascript');
+
+    expect(jsCount?.count).toBe(2);
+  });
+});
