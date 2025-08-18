@@ -1,5 +1,5 @@
 import { graphql, HttpResponse } from 'msw';
-import { mockRepositories } from '@/__tests__/utils.test';
+import { mockRepositories } from '../__tests__/utils.test';
 
 export const handlers = [
   graphql.query('GetUser', ({ query, variables }) => {
